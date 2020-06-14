@@ -7,11 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.ArticleFragment">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/rv_article_list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    android:background="@android:color/primary_text_dark_nodisable"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_article_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/primary_text_dark_nodisable"
+        android:paddingBottom="30dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

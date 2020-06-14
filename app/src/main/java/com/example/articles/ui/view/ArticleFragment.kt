@@ -40,6 +40,7 @@ class ArticleFragment : Fragment() {
         rv_article_list.adapter = adapter
 
         viewModel.getListOfArticle().observe(viewLifecycleOwner, Observer {
+            progressBar.visibility = View.GONE;
             adapter.updateList(it as ArrayList<ArticleResponse>)
         })
 
@@ -56,6 +57,8 @@ class ArticleFragment : Fragment() {
 
             override fun loadMoreItems() {
                 isLoading = true
+                progressBar.visibility = View.VISIBLE;
+
                 //you have to call loadmore items to get more data
                 viewModel.getMoreArticles()
             }
