@@ -3,11 +3,12 @@ package com.example.articles.repository
 import com.example.articles.model.ArticleResponse
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 
 interface APIService {
 
-    @GET("blogs?page=1&limit=10")
-    fun getListOfNews(): Call<List<ArticleResponse>>
+    @GET("blogs")
+    fun getListOfNews(@Query("page") pageNumber : Int, @Query("limit") pageLimit : Int): Call<List<ArticleResponse>>
 
 }

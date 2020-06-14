@@ -22,7 +22,7 @@ class ArticleApplication : Application() {
         apiComponent = initDaggerComponent()
     }
 
-    fun initDaggerComponent(): APIComponent {
+    private fun initDaggerComponent(): APIComponent {
         apiComponent = DaggerAPIComponent
             .builder()
             .aPIModule(APIModule(ApiURL.BASE_URL))

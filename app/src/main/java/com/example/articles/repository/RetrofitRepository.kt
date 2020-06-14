@@ -23,9 +23,9 @@ class RetrofitRepository {
         apiComponent.inject(this)
     }
 
-    fun fetchListOfArticle(): LiveData<List<ArticleResponse>> {
+    fun fetchListOfArticle(pageNumber: Int, pageLimit: Int): LiveData<List<ArticleResponse>> {
         val apiService: APIService = retrofit.create(APIService::class.java)
-        val listOfNews = apiService.getListOfNews()
+        val listOfNews = apiService.getListOfNews(pageNumber, pageLimit)
         listOfNews.enqueue(object : Callback<List<ArticleResponse>> {
             override fun onResponse(
                 call: Call<List<ArticleResponse>>,
