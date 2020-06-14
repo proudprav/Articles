@@ -57,7 +57,7 @@ class ArticleFragment : Fragment() {
             override fun loadMoreItems() {
                 isLoading = true
                 //you have to call loadmore items to get more data
-                viewModel.getMoreItems()
+                viewModel.getMoreArticles()
             }
         })
     }

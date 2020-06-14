@@ -53,7 +53,7 @@ class ArticleListAdapter : RecyclerView.Adapter<ArticleListAdapter.ArticleViewHo
                 likesCount.text = likes
                 commentsCount.text = comments
                 postedOn.text = createdAt?.timeFromNow().orEmpty()
-                media.withNotNullNorEmpty { imageTitle.text = media?.get(0)?.image
+                media.withNotNullNorEmpty { imageTitle.text = media?.get(0)?.title
                     imageUrl.text = media?.get(0)?.url
                     Picasso.with(itemView.context).load(media?.get(0)?.image).into(postedImage)
                 isMediaNull = false}

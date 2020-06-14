@@ -12,7 +12,7 @@ class ArticleListViewModel(private val retrofitRepository: RetrofitRepository) :
     fun getListOfArticle() = retrofitRepository.fetchListOfArticle(pageNumber, PAGE_LIMIT)
 
 
-    fun getMoreItems(){
+    fun getMoreArticles(){
         pageNumber++
         getListOfArticle()
     }
