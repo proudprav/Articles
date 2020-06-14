@@ -1,9 +1,11 @@
 package com.example.articles.model
 
+import java.util.*
+
 data class ArticleResponse(
 
     val id: Int,
-    val createdAt: String,
+    val createdAt: Date,
     val content: String,
     val comments: Int,
     val likes: Int,

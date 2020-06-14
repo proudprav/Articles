@@ -6,7 +6,7 @@ import com.example.articles.repository.RetrofitRepository
 class ArticleListViewModel(private val retrofitRepository: RetrofitRepository) : ViewModel() {
     // TODO: Implement the ViewModel
 
-    init {
-        retrofitRepository.fetchListOfArticle()
-    }
+
+    fun getListOfArticle() = retrofitRepository.fetchListOfArticle()
+
 }

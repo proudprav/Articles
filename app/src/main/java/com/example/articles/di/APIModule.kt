@@ -7,7 +7,6 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -27,13 +26,9 @@ class APIModule constructor(private val baseURL: String) {
 
     @Singleton
     @Provides
-    fun provideGSON(): GsonConverterFactory {
-        val gson = GsonBuilder()
-            .setLenient()
-            .create()
-        return GsonConverterFactory.create(gson)
-
-    }
+    fun provideGSON(): GsonConverterFactory = GsonConverterFactory.create(GsonBuilder()
+            .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+            .create())
 
     @Singleton
     @Provides
